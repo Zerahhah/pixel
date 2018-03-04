@@ -12,7 +12,7 @@ public:
 		row = colorImage.rows;
 		std::cout << "col is : " << col << std::endl;
 		std::cout << "row is : " << row << std::endl;
-		block = _block;//¿é´óÐ¡
+		block = _block;//å—å¤§å°
 		resCol = col / block;
 		resRow = row / block;
 		std::cout << resCol << std::endl;
@@ -50,8 +50,8 @@ public:
 private:
 	cv::Mat colorImage,resImage;
 	int block;
-	int col, row;//ÊäÈëÍ¼Æ¬µÄ³¤¿í
-	int resCol, resRow;//Êä³öÍ¼Æ¬±»·Ö³É¶àÉÙ¿é
+	int col, row;//è¾“å…¥å›¾ç‰‡çš„é•¿å®½
+	int resCol, resRow;//è¾“å‡ºå›¾ç‰‡è¢«åˆ†æˆå¤šå°‘å—
 
 };
 
@@ -59,48 +59,6 @@ private:
 int main() {
 	Pixel p(8, "1.jpg");
 
-	/*
-	cv::Mat colorImage = cv::imread("1.jpg");
-	int col = colorImage.cols;
-	int row = colorImage.rows;
-	std::cout << "col is : " << col << std::endl;
-	std::cout << "row is : " << row << std::endl;
-	int block = 8;//¿é´óÐ¡
-	int resCol = col / block;
-	int resRow = row / block;
-	std::cout << resCol << std::endl;
-	std::cout << resRow << std::endl;
-	cv::Mat resImage(resRow*block, resCol*block, CV_8UC3, cv::Scalar::all(0));
-
-	
-	for (int i = 0; i < resRow; ++i) {
-		for (int j = 0; j < resCol; ++j) {
-			int blue = 0, green = 0, red = 0;
-			for (int n = i*block; n <= (i+1)*block - 1; ++n) {
-				for (int m = j*block; m <= (j+1)*block - 1; ++m) {
-					blue += colorImage.at<cv::Vec3b>(n, m)[0];
-					green += colorImage.at<cv::Vec3b>(n, m)[1];
-					red += colorImage.at<cv::Vec3b>(n, m)[2];
-				}
-			}
-
-			blue = blue / (block*block);
-			green = green / (block*block);
-			red = red / (block*block);
-			for (int n = i*block; n <= (i + 1)*block - 1; ++n) {
-				for (int m = j*block; m <= (j + 1)*block - 1; ++m) {
-					resImage.at<cv::Vec3b>(n, m)[0] = blue;
-					resImage.at<cv::Vec3b>(n, m)[1] = green;
-					resImage.at<cv::Vec3b>(n, m)[2] = red;
-				}
-			}
-
-		}
-	}
-	
-	cv::imshow("res", resImage);
-	cv::imwrite("res.jpg", resImage);
-	*/
 	std::cout << "success!"<<std::endl;
 	cv::waitKey(0);
 	system("pause");
